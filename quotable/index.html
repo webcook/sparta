@@ -28,18 +28,28 @@
 
         body {
             position: relative;
-            background-image: url("https://source.unsplash.com/featured/?landscape");
-            /*background-image: url("https://media.timeout.com/images/105211701/image.jpg");*/
+            background-image: url("bg01.jpg");
             background-position: center;
             background-size: cover;
-
+            background-repeat: no-repeat;
             color: white;
-            text-shadow: 6px 2px 2px gray;
+            overflow: hidden;
         }
+        body.bg01 { background-image: url("bg01.jpg");}
+        body.bg02 { background-image: url("bg02.jpg");}
+        body.bg03 { background-image: url("bg03.jpg");}
+        body.bg04 { background-image: url("bg04.jpg");}
+        body.bg05 { background-image: url("bg05.jpg");}
+        body.bg06 { background-image: url("bg06.jpg");}
+        body.bg07 { background-image: url("bg07.jpg");}
+        body.bg08 { background-image: url("bg08.jpg");}
 
         .time {
+            display: block;
+            width: 100%;
             font-size: 80px;
             font-weight: bold;
+            text-align: center;
         }
 
         .greeting {
@@ -51,8 +61,9 @@
         }
 
         .content {
+
             font-size: 50px;
-            padding: 2% 8%;
+            padding: 2% 6%;
 
         }
 
@@ -69,6 +80,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
         }
 
         .quote {
@@ -96,12 +108,12 @@
 </head>
 
 <body>
-    <div class="main">
+    <div class="main notranslate">
         <div id="time" class="time">00:00</div>
         <div class="greeting">Plan, Do, See</div>
         <div class="todo">66Day Challenge</div>
     </div>
-    <div class="quote">
+    <div class="quote ">
         <div id="content" class="content">"명언의 내용"</div>
         <div id="author" class="author">명언의 저자</div>
     </div>
@@ -113,7 +125,8 @@ function googleTranslateElementInit() {
     {
       pageLanguage: 'en',
       includedLanguages: 'ko,en,ja',
-      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // none or HORIZONTAL, SIMPLE
+      //layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // none or HORIZONTAL, SIMPLE
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE // none or HORIZONTAL, SIMPLE
     }, 'google_translate_element'
   );
 }
