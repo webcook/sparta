@@ -28,13 +28,13 @@ function renderCurrentTime() {
 
 // 명언
 function renderQuote() {
-  let url = `https://api.quotable.io/random`
+  let url = `https://korean-advice-open-api.vercel.app/api/advice`
   fetch(url)
     .then(res => res.json()).then((data) => {
       // console.log(data);
-      let content = `" ${data['content']} "`
-      let author = `- ${data['author']} -`
-      $('#content').text(content)
+      let message = `" ${data['message']} "`
+      let author = `- ${data['author']} - ${data['authorProfile']}`
+      $('#content').text(message)
       $('#author').text(author)
     })
 }
